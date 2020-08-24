@@ -8,6 +8,18 @@ if exists('g:loaded_fugitive')
 endif
 let g:loaded_fugitive = 1
 
+" function! verbose(msg, ...) abort
+"   if &verbose
+"     if type(a:msg) == type([])
+"       for msg in a:msg
+"         echomsg printf('[fugi%s] %s', (a:0 ? ':'.a:1 : ''), msg)
+"       endfor
+"     else
+"       echomsg printf('[fugi%s] %s', (a:0 ? ':'.a:1 : ''), a:msg)
+"     endif
+"   endif
+" endfunction
+
 function! FugitiveGitDir(...) abort
   if !a:0 || type(a:1) == type(0) && a:1 < 0
     if exists('g:fugitive_event')

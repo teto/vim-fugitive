@@ -5017,6 +5017,7 @@ function! fugitive#Diffsplit(autodir, keepfocus, mods, arg, args) abort
       let file = s:Relative(':0:')
     endif
     let spec = s:Generate(file)
+
     if spec =~# '^fugitive:' && empty(s:DirCommitFile(spec)[2])
       let spec = FugitiveVimPath(spec . s:Relative('/'))
     endif
